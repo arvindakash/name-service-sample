@@ -26,7 +26,7 @@ restService.post('/checkavailable', function(request, response) {
       ? request.body.queryResult.parameters.name
       : "will get result soon.";
   return response.json({
-    speech:name,
+    fulfillmentText:name,
     displayText:name,
     source:'dialogflow sample.'});
 });
