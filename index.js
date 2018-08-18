@@ -12,7 +12,9 @@ restService.use(
 );
 
 restService.use(bodyParser.json());
-
+restService.get('/',function(req,res){
+  return 'hurray';
+});
 restService.post("/checkavailable", function(req, res) {
   var speech =
     req.body.result &&
