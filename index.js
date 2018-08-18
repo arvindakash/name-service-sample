@@ -21,10 +21,10 @@ restService.get('/',function(req,res){
 });
 restService.post("/checkavailable", function(req, res) {
   var speech =
-    req.body.result &&
-    req.body.result.parameters &&
-    req.body.result.parameters.name
-      ? req.body.result.parameters.name
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.name
+      ? req.body.queryResult.parameters.name
       : "Seems like some problem. Speak again.";
   return res.json({
     speech: name,
