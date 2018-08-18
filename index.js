@@ -13,7 +13,11 @@ restService.use(
 
 restService.use(bodyParser.json());
 restService.get('/',function(req,res){
-  return 'hurray';
+  return res.json({
+    speech: 'sample',
+    displayText: 'sample',
+    source: "webhook-name-sample"
+  });
 });
 restService.post("/checkavailable", function(req, res) {
   var speech =
