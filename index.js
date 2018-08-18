@@ -19,19 +19,16 @@ restService.get('/',function(req,res){
     source: "webhook-name-sample"
   });
 });
-restService.post("/checkavailable", function(req, res) {
-  return req.body;
-  var speech =
-    req.body.queryResult &&
-    req.body.queryResult.parameters &&
-    req.body.queryResult.parameters.name
-      ? req.body.queryResult.parameters.name
-      : "Seems like some problem. Speak again.";
-  return res.json({
-    speech: name,
-    displayText: name,
-    source: "webhook-name-sample"
-  });
+restService.post('/checkavailable', function(request, response) {
+  var name = request.body.queryResult &&
+    request.body.queryResult.parameters &&
+    request.body.queryResult.parameters.name
+      ? request.body.queryResult.parameters.name
+      : "will get result soon.";
+  return response.json({
+    speech:name,
+    displayText:name,
+    source:'dialogflow sample.'});
 });
 
 restService.listen(process.env.PORT || 8000, function() {
