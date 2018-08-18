@@ -20,6 +20,7 @@ restService.get('/',function(req,res){
   });
 });
 restService.post("/checkavailable", function(req, res) {
+  return req.body;
   var speech =
     req.body.queryResult &&
     req.body.queryResult.parameters &&
